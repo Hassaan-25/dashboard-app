@@ -45,6 +45,7 @@ export default function JobBoard() {
           variant="h6"
           fontWeight={"600"}
           letterSpacing={"0.5px"}
+          fontSize={[16, 18]}
         >
           Featured Jobs
         </Typography>
@@ -55,6 +56,7 @@ export default function JobBoard() {
           ml={2}
           className="font-neue"
           letterSpacing={"0.5px"}
+          fontSize={[16, 18]}
           style={{
             textDecoration: "underline",
             textUnderlineOffset: "4px",
@@ -90,6 +92,7 @@ export default function JobBoard() {
           variant="h6"
           fontWeight={"600"}
           letterSpacing={"0.5px"}
+          fontSize={[16, 18]}
         >
           Recommended Jobs
         </Typography>
@@ -100,6 +103,7 @@ export default function JobBoard() {
           ml={2}
           className="font-neue"
           letterSpacing={"0.5px"}
+          fontSize={[16, 18]}
           style={{
             textDecoration: "underline",
             textUnderlineOffset: "4px",
