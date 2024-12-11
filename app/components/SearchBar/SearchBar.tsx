@@ -87,7 +87,6 @@ export default function JobSearchFilter({
           padding: "0.5rem",
           borderRadius: "8px",
           boxShadow: "none",
-          border: "1px solid #E0E0E0",
           outline: "none",
           backgroundColor: "transparent",
           marginBottom: isMobile ? "0.5rem" : 0,
@@ -104,7 +103,6 @@ export default function JobSearchFilter({
         sx={{
           width: isMobile ? "100%" : "200px",
           backgroundColor: "#fff",
-          border: "1px solid #E0E0E0",
           outline: "none",
           boxShadow: "none",
           marginBottom: isMobile ? "0.5rem" : 0,
@@ -125,7 +123,6 @@ export default function JobSearchFilter({
         sx={{
           width: isMobile ? "100%" : "200px",
           backgroundColor: "#fff",
-          border: "1px solid #E0E0E0",
           outline: "none",
           boxShadow: "none",
           marginBottom: isMobile ? "0.5rem" : 0,
@@ -174,14 +171,12 @@ export default function JobSearchFilter({
               flex: 1,
               padding: "0.5rem",
               borderRadius: "8px",
-              border: "1px solid #E0E0E0",
               backgroundColor: "transparent",
             }}
           />
           <IconButton
             onClick={() => setIsFilterDrawerOpen(true)}
             sx={{
-              border: "1px solid #E0E0E0",
               borderRadius: "8px",
               p: 1,
             }}
