@@ -56,13 +56,16 @@ export default function JobCard({
             </Box>
           </Grid>
           <Grid item xs={8}>
-            <Typography fontSize={"16px"} sx={{ fontWeight: "bold" }}>
+            <Typography
+              fontSize={"16px"}
+              sx={{ fontWeight: "bold", letterSpacing: "0.3px" }}
+            >
               {title}
             </Typography>
             <Typography
               variant="body2"
               color="#585D6E"
-              sx={{ marginBottom: "0.5rem" }}
+              sx={{ marginBottom: "0.5rem", letterSpacing: "0.5px" }}
             >
               {company}
             </Typography>
