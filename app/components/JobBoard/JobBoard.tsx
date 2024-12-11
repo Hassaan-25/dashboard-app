@@ -5,40 +5,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import JobSearchFilter from "../SearchBar/SearchBar";
 import JobCard from "../JobCards/JobCard";
 import { Filters } from "@/app/Types/types";
-
-const jobCards = [
-  {
-    id: 1,
-    title: "Frontend Developer",
-    location: "USA",
-    type: "Full-time",
-    category: "Frontend",
-    company: "TechCorp",
-    applicants: 15,
-    posted: "2 days ago",
-  },
-  {
-    id: 2,
-    title: "Backend Developer",
-    location: "Remote",
-    type: "Part-time",
-    category: "Backend",
-    company: "DevWorks",
-    applicants: 20,
-    posted: "3 days ago",
-  },
-  {
-    id: 3,
-    title: "Graphic Designer",
-    location: "USA",
-    type: "Full-time",
-    category: "Graphic Designer",
-    company: "DesignPro",
-    applicants: 25,
-    posted: "1 day ago",
-  },
-  // Add more mock data as needed
-];
+import { jobCards } from "./StaticData";
 
 export default function JobBoard() {
   const [filteredJobs, setFilteredJobs] = useState(jobCards);
@@ -102,6 +69,8 @@ export default function JobBoard() {
               location={job.location}
               posted={job.posted}
               applicants={job.applicants}
+              logo={job.logo}
+              promoted={job.promoted}
             />
           </Grid>
         ))}
