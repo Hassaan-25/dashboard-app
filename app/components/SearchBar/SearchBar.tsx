@@ -9,23 +9,25 @@ import {
   Select,
   Typography,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import searchIcon from "../../../assets/search-white.svg";
+import Image from "next/image";
 import { styled } from "@mui/material/styles";
 
 const SearchContainer = styled(Box)({
   display: "flex",
   alignItems: "center",
   gap: "1rem",
-  backgroundColor: "#F5F5F5",
+  backgroundColor: "#FFFFFF",
   padding: "1rem",
   borderRadius: "8px",
+  marginTop: "1rem",
 });
 
 const FilterButton = styled(Button)({
   border: "1px solid #ccc",
   borderRadius: "8px",
   padding: "0.5rem 1rem",
-  color: "#333",
+  color: "#737A91",
   textTransform: "capitalize",
   "&:hover": {
     backgroundColor: "#E5E5E5",
@@ -59,24 +61,38 @@ export default function JobSearchFilter({
 
   return (
     <Box>
-      {/* Search Bar */}
       <SearchContainer>
         <InputBase
           placeholder="Job Title, Company, or Keywords"
           value={filters.keyword}
           onChange={(e) => handleFilterChange("keyword", e.target.value)}
-          style={{
+          sx={{
             flex: 1,
             padding: "0.5rem",
-            border: "1px solid #ccc",
             borderRadius: "8px",
+            boxShadow: "none",
+            border: "none",
+            outline: "none",
+            backgroundColor: "transparent",
+            "&::placeholder": {
+              color: "#000",
+            },
           }}
         />
         <Select
           value={filters.location}
           onChange={(e) => handleFilterChange("location", e.target.value)}
           displayEmpty
-          style={{ width: "200px", backgroundColor: "#fff" }}
+          sx={{
+            width: "200px",
+            backgroundColor: "#fff",
+            border: "none",
+            outline: "none",
+            boxShadow: "none",
+            "& .MuiOutlinedInput-notchedOutline": {
+              border: "none",
+            },
+          }}
         >
           <MenuItem value="">Select Location</MenuItem>
           <MenuItem value="Remote">Remote</MenuItem>
@@ -86,17 +102,36 @@ export default function JobSearchFilter({
           value={filters.jobType}
           onChange={(e) => handleFilterChange("jobType", e.target.value)}
           displayEmpty
-          style={{ width: "200px", backgroundColor: "#fff" }}
+          sx={{
+            width: "200px",
+            backgroundColor: "#fff",
+            border: "none",
+            outline: "none",
+            boxShadow: "none",
+            "& .MuiOutlinedInput-notchedOutline": {
+              border: "none",
+            },
+          }}
         >
           <MenuItem value="">Job Type</MenuItem>
           <MenuItem value="Full-time">Full-time</MenuItem>
           <MenuItem value="Part-time">Part-time</MenuItem>
         </Select>
         <Button
-          variant="contained"
-          color="primary"
-          startIcon={<SearchIcon />}
+          startIcon={
+            <Image src={searchIcon} alt="Search" width={12} height={12} />
+          }
           onClick={handleSearch}
+          variant="contained"
+          sx={{
+            background: "#0154AA",
+            color: "#FFFFFF",
+            fontWeight: "bold",
+            ml: 3,
+            p: 1.5,
+            borderRadius: "12px",
+            minWidth: "160px",
+          }}
         >
           Search
         </Button>
@@ -104,7 +139,9 @@ export default function JobSearchFilter({
 
       {/* Similar Filters */}
       <Box display="flex" gap="1rem" marginTop="1rem">
-        <Typography>Similar:</Typography>
+        <Typography alignSelf={"center"} color="#737A91">
+          Similar:
+        </Typography>
         <FilterButton
           onClick={() => handleFilterChange("category", "Frontend")}
         >

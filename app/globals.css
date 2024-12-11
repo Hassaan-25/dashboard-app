@@ -9,8 +9,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #F4F4F4;
+    --foreground: #FFFFFF;
+
+    /* --background: #0a0a0a;
+    --foreground: #ededed; */
   }
 }
 
@@ -18,4 +21,27 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
+  font-family: var(--font-neue-medium) !important;
+}
+
+.font-neue {
+  font-family: var(--font-neue) !important;
+}
+
+.font-neue-medium {
+  font-family: var(--font-neue-medium) !important;
+}
+
+.font-neue-bold {
+  font-family: var(--font-neue-bold) !important;
 }

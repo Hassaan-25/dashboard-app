@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import JobSearchFilter from "../SearchBar/SearchBar";
 import JobCard from "../JobCards/JobCard";
 import { Filters } from "@/app/Types/types";
@@ -66,13 +66,32 @@ export default function JobBoard() {
 
   return (
     <div>
-      {/* Search Bar */}
       <JobSearchFilter onSearch={handleSearch} />
 
-      {/* Recommended Jobs Section */}
-      <Typography variant="h6" mt={4} mb={2}>
-        Recommended Jobs
-      </Typography>
+      <Box display="flex" alignItems="center" mt={3} mb={2}>
+        <Typography
+          color="#333333"
+          variant="h6"
+          fontWeight={"600"}
+          letterSpacing={"0.5px"}
+        >
+          Recommended Jobs
+        </Typography>
+
+        <Typography
+          color="#0154AA"
+          variant="h6"
+          ml={2}
+          className="font-neue"
+          letterSpacing={"0.5px"}
+          style={{
+            textDecoration: "underline",
+            textUnderlineOffset: "4px",
+          }}
+        >
+          See Featured Jobs
+        </Typography>
+      </Box>
 
       <Grid container spacing={2}>
         {filteredJobs.map((job) => (

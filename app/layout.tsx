@@ -8,10 +8,21 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const neueFont = localFont({
+  src: "../assets/fonts/NeueHaasDisplayRoman.ttf",
+  display: "swap",
+  variable: "--font-neue",
+});
+const neueFontMedium = localFont({
+  src: "../assets/fonts/NeueHaasDisplayLight.ttf",
+  display: "swap",
+  variable: "--font-neue-medium",
+});
+const neueFontBold = localFont({
+  src: "../assets/fonts/NeueHaasDisplayMediu.ttf",
+  display: "swap",
+  variable: "--font-neue-bold",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${neueFont.variable} ${neueFontBold.variable} ${neueFontMedium.variable}
+        
+        antialiased`}
       >
         <Navbar />
         {children}
