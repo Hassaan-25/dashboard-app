@@ -5,12 +5,18 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  Button,
   IconButton,
   InputBase,
   Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Button,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
 import Logo from "../../../assets/logo.svg";
 import avatar from "../../../assets/avatar.svg";
@@ -20,7 +26,6 @@ const Search = styled("div")(({ theme }) => ({
   position: "relative",
   background: "#F6F9FF",
   borderRadius: "8px",
-
   marginLeft: 0,
   width: "100%",
   [theme.breakpoints.up("sm")]: {
@@ -54,9 +59,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const Navbar = () => {
   const [selectedItem, setSelectedItem] = useState<string | null>("Find Jobs");
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handleItemClick = (item: string) => {
     setSelectedItem(item);
+  };
+
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
   };
 
   const items = [
@@ -80,53 +90,66 @@ const Navbar = () => {
           padding: "20px",
         }}
       >
+        {/* Logo and Menu */}
         <Box display="flex" alignItems="center">
           <Typography variant="h6" noWrap component="div" sx={{ mr: 3 }}>
             <Image src={Logo} alt="Logo" width={48} height={48} />
           </Typography>
-          {items.map((item, index) => (
-            <Typography
-              key={index}
-              variant="body1"
-              component="div"
-              className={
-                selectedItem === item.label
-                  ? "font-neue-bold"
-                  : "font-neue-medium"
-              }
-              onClick={() => handleItemClick(item.label)}
-              sx={{
-                color: selectedItem === item.label ? "#0154AA" : "#737A91",
-                fontWeight: "bold",
-                letterSpacing: "0.4px",
-                cursor: "pointer",
-                mr: 3,
-                transition: "color 0.3s ease, text-decoration 0.3s ease",
-                "&:hover": {
-                  color: "#0154AA",
-                  textDecoration: "underline",
-                },
-              }}
-            >
-              {item.label}
-            </Typography>
-          ))}
+          {/* Desktop Menu */}
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              alignItems: "center",
+            }}
+          >
+            {items.map((item, index) => (
+              <Typography
+                key={index}
+                variant="body1"
+                component="div"
+                className={
+                  selectedItem === item.label
+                    ? "font-neue-bold"
+                    : "font-neue-medium"
+                }
+                onClick={() => handleItemClick(item.label)}
+                sx={{
+                  color: selectedItem === item.label ? "#0154AA" : "#737A91",
+                  fontWeight: "bold",
+                  letterSpacing: "0.4px",
+                  cursor: "pointer",
+                  mr: 3,
+                  transition: "color 0.3s ease, text-decoration 0.3s ease",
+                  "&:hover": {
+                    color: "#0154AA",
+                    textDecoration: "underline",
+                  },
+                }}
+              >
+                {item.label}
+              </Typography>
+            ))}
+          </Box>
         </Box>
 
         {/* Right Side */}
         <Box display="flex" alignItems="center">
-          <Search>
-            <SearchIconWrapper>
-              {/* <SearchIcon /> */}
-              <Image src={searchIcon} alt="Search" width={24} height={24} />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+          {/* Search Bar */}
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <Search>
+              <SearchIconWrapper>
+                <Image src={searchIcon} alt="Search Icon" />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
+          </Box>
+
           <Button
             variant="contained"
+            className="hide-on-mobile"
             sx={{
               background: "#0154AA",
               color: "#FFF",
@@ -139,17 +162,61 @@ const Navbar = () => {
           >
             Resume Builder
           </Button>
-          <IconButton sx={{ ml: 3 }}>
-            <Image
-              src={avatar}
-              alt="Profile"
-              width={48}
-              height={48}
-              style={{ borderRadius: "50%" }}
-            />
+
+          {/* Avatar */}
+          <Box ml={2} display="flex" alignItems="center">
+            <Image src={avatar} alt="Avatar" width={40} height={40} />
+          </Box>
+          {/* Mobile Menu Icon */}
+          <IconButton
+            sx={{ display: { xs: "block", md: "none" }, ml: 2 }}
+            onClick={toggleDrawer}
+          >
+            <MenuIcon />
           </IconButton>
         </Box>
       </Toolbar>
+
+      {/* Mobile Drawer */}
+      <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer}>
+        <Box
+          sx={{
+            width: 250,
+            p: 2,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            height: "100%",
+          }}
+        >
+          <Box>
+            <IconButton onClick={toggleDrawer}>
+              <CloseIcon />
+            </IconButton>
+            <List>
+              {items.map((item, index) => (
+                <ListItem
+                  key={index}
+                  component="button" // Use the 'component' prop to render it as a button
+                  onClick={() => {
+                    handleItemClick(item.label);
+                    toggleDrawer();
+                  }}
+                  sx={{
+                    width: "100%",
+                    textAlign: "left",
+                    padding: "10px 16px",
+                    cursor: "pointer",
+                    "&:hover": { backgroundColor: "#f4f4f4" },
+                  }}
+                >
+                  <ListItemText primary={item.label} />
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        </Box>
+      </Drawer>
     </AppBar>
   );
 };

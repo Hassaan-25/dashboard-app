@@ -9,8 +9,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #F4F4F4;
-    --foreground: #FFFFFF;
+    --background: #f4f4f4;
+    --foreground: #ffffff;
 
     /* --background: #0a0a0a;
     --foreground: #ededed; */
@@ -44,4 +44,16 @@ div {
 
 .font-neue-bold {
   font-family: var(--font-neue-bold) !important;
+}
+
+@media screen and (max-width: 465px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
 }
