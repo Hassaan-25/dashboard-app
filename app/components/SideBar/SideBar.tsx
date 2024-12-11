@@ -1,9 +1,35 @@
-import { Box, Avatar, Typography, Divider } from "@mui/material";
+"use client";
+import {
+  Box,
+  Avatar,
+  Typography,
+  Divider,
+  IconButton,
+  Popover,
+} from "@mui/material";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import { useState } from "react";
 import Image from "next/image";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import avatar from "../../../assets/Oval.png";
 import background from "../../../assets/background.png";
 
 export default function Sidebar() {
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+
+  const handleOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const isOpen = Boolean(anchorEl);
+
   return (
     <>
       <Box
@@ -120,9 +146,37 @@ export default function Sidebar() {
         >
           My Calendar
         </Typography>
-        <Typography color="#737A91" fontSize="14px" fontWeight="600" mt={1}>
-          Upcoming Interviews
-        </Typography>
+
+        <Box display="flex" justifyContent="space-between" alignItems="center">
+          <Typography color="#737A91" fontSize="14px" fontWeight="600" mt={1}>
+            Upcoming Interviews
+          </Typography>
+
+          <IconButton onClick={handleOpen}>
+            {anchorEl ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+          </IconButton>
+        </Box>
+
+        {/* Popover for Calendar */}
+        <Popover
+          open={isOpen}
+          anchorEl={anchorEl}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+        >
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <Box p={2}>
+              <DateCalendar />
+            </Box>
+          </LocalizationProvider>
+        </Popover>
       </Box>
     </>
   );
