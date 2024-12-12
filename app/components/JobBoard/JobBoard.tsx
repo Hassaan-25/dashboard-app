@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import JobSearchFilter from "../SearchBar/SearchBar";
 import JobCard from "../JobCards/JobCard";
 import SimilarFeatures from "../SimilarFeatures/SimilarFeatures";
@@ -95,9 +95,9 @@ export default function JobBoard() {
           ))}
       </Grid>
 
-      {/* Recommended Jobs  */}
+      <Divider sx={{ my: 4, borderColor: "#E9ECEF" }} />
 
-      <Box display="flex" alignItems="center" mt={3} mb={2}>
+      <Box display="flex" alignItems="center" mb={2}>
         <Typography
           color="#333333"
           variant="h6"
