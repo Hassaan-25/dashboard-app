@@ -140,6 +140,11 @@ export default function JobSearchFilter({
           p: 1.5,
           borderRadius: "12px",
           minWidth: isMobile ? "100%" : "160px",
+
+          boxShadow: "none",
+          "&:hover": {
+            boxShadow: "none",
+          },
         }}
       >
         Search

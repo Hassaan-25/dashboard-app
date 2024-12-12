@@ -158,6 +158,10 @@ const Navbar = () => {
               px: 4,
               py: 1.5,
               borderRadius: "8px",
+              boxShadow: "none",
+              "&:hover": {
+                boxShadow: "none",
+              },
             }}
           >
             Resume Builder

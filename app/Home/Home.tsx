@@ -62,7 +62,7 @@ export default function Dashboard() {
       </Grid>
 
       <Grid item xs={9}>
-        <Box p={4}>
+        <Box py={4} pr={4} pl={2}>
           <Box>
             <Typography
               color="#333"

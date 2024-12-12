@@ -26,7 +26,6 @@ export default function JobCard({
     <Card
       sx={{
         borderRadius: "12px",
-        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
         backgroundColor: "#fff",
       }}
     >
@@ -58,13 +57,15 @@ export default function JobCard({
           <Grid item xs={8}>
             <Typography
               fontSize={"16px"}
-              sx={{ fontWeight: "bold", letterSpacing: "0.3px" }}
+              sx={{ fontWeight: "bold" }}
+              className="font-neue"
             >
               {title}
             </Typography>
             <Typography
               variant="body2"
               color="#585D6E"
+              fontWeight={"600"}
               sx={{ marginBottom: "0.5rem", letterSpacing: "0.5px" }}
             >
               {company}
@@ -103,6 +104,10 @@ export default function JobCard({
               fontWeight: "bold",
               borderRadius: "8px",
               backgroundColor: "#0154AA",
+              boxShadow: "none",
+              "&:hover": {
+                boxShadow: "none",
+              },
             }}
           >
             Apply Now
@@ -110,6 +115,7 @@ export default function JobCard({
           <IconButton
             sx={{
               color: "#AAAAAA",
+              fontSize: 100,
             }}
           >
             <BookmarkBorderIcon />

@@ -7,8 +7,7 @@ import {
   IconButton,
   Popover,
 } from "@mui/material";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import dropIcon from "../../../assets/drop.svg";
 import { useState } from "react";
 import Image from "next/image";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -36,7 +35,6 @@ export default function Sidebar() {
         textAlign="center"
         bgcolor="#FFFFFF"
         borderRadius={"8px"}
-        boxShadow={"0 4px 12px rgba(0, 0, 0, 0.1)"}
         paddingBottom={"16px"}
       >
         <Box
@@ -136,28 +134,28 @@ export default function Sidebar() {
         </Box>
       </Box>
 
-      {/* Calendar Section */}
       <Box mt={3} bgcolor="#FFFFFF" p={2} borderRadius={"8px"}>
-        <Typography
-          color="#333333"
-          fontSize="14px"
-          fontWeight="600"
-          className="font-neue"
-        >
-          My Calendar
-        </Typography>
-
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <Typography color="#737A91" fontSize="14px" fontWeight="600" mt={1}>
-            Upcoming Interviews
-          </Typography>
+          <Box>
+            <Typography
+              color="#333333"
+              fontSize="14px"
+              fontWeight="600"
+              className="font-neue"
+            >
+              My Calendar
+            </Typography>
+
+            <Typography color="#737A91" fontSize="14px" fontWeight="600" mt={1}>
+              Upcoming Interviews
+            </Typography>
+          </Box>
 
           <IconButton onClick={handleOpen}>
-            {anchorEl ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+            <Image src={dropIcon} alt="Drop Icon" width={12} height={12} />
           </IconButton>
         </Box>
 
-        {/* Popover for Calendar */}
         <Popover
           open={isOpen}
           anchorEl={anchorEl}
