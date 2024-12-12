@@ -21,21 +21,6 @@ Check out the live version of the project here: [Job Finder Dashboard](https://j
 - **Hosting**: Netlify
 - **Language**: TypeScript
 
-## 📂 Folder Structure
-
-```
-src/
-├── app/
-│   ├── JobBoard/           # Job board components
-│   ├── SearchBar/          # Search bar component
-│   ├── JobCards/           # Job card components
-│   └── Types/              # Type definitions
-├── assets/                 # Static assets (images, icons, etc.)
-├── components/             # Reusable UI components
-├── styles/                 # Global and component-specific styles
-└── utils/                  # Utility functions
-```
-
 ## ⚙️ Installation
 
 1. Clone the repository:
