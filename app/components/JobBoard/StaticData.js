@@ -4,7 +4,8 @@ const jobCards = [
   {
     id: 1,
     title: "Frontend Developer",
-    location: "Seattle, USA (Remote)",
+    location: "USA",
+    site: "Seattle, USA (Onsite)",
     type: "Full-time",
     category: "Frontend",
     company: "TechCorp",
@@ -16,7 +17,8 @@ const jobCards = [
   {
     id: 2,
     title: "Backend Developer",
-    location: "San Francisco, USA (Remote)",
+    location: "Remote",
+    site: "San Francisco, USA (Remote)",
     type: "Part-time",
     category: "Backend",
     company: "DevWorks",
@@ -28,7 +30,8 @@ const jobCards = [
   {
     id: 3,
     title: "Graphic Designer",
-    location: "Pakistan, Lahore (Onsite)",
+    location: "Pakistan",
+    site: "Pakistan, Lahore (Onsite)",
     type: "Full-time",
     category: "Graphic Designer",
     company: "DesignPro",
@@ -41,7 +44,8 @@ const jobCards = [
   {
     id: 4,
     title: "Frontend Developer",
-    location: "Pakistan, Karachi (Onsite)",
+    location: "Pakistan",
+    site: "Pakistan, Karachi (Onsite)",
     type: "Part-Time",
     category: "Frontend",
     company: "Teams",
@@ -57,7 +61,8 @@ const recommendedJobs = [
   {
     id: 101,
     title: "Graphic Designer",
-    location: "Pakistan, Lahore (Onsite)",
+    location: "Pakistan",
+    site: "Pakistan, Lahore (Onsite)",
     type: "Full-time",
     category: "Graphic Designer",
     company: "DesignPro",
@@ -70,7 +75,8 @@ const recommendedJobs = [
   {
     id: 102,
     title: "Backend Developer",
-    location: "San Francisco, USA (Remote)",
+    location: "USA",
+    site: "San Francisco, USA (Remote)",
     type: "Part-time",
     category: "Backend",
     company: "DevWorks",
@@ -83,7 +89,8 @@ const recommendedJobs = [
   {
     id: 103,
     title: "Frontend Developer",
-    location: "Seattle, USA (Remote)",
+    location: "USA",
+    site: "Seattle, USA (Remote)",
     type: "Full-time",
     category: "Frontend",
     company: "DevSinc",
@@ -96,7 +103,8 @@ const recommendedJobs = [
   {
     id: 104,
     title: "Frontend Developer",
-    location: "Pakistan, Karachi (Onsite)",
+    location: "Pakistan",
+    site: "Pakistan, Karachi (Onsite)",
     type: "Part-Time",
     category: "Frontend",
     company: "Teams",
@@ -105,8 +113,6 @@ const recommendedJobs = [
     logo: companyLogo1,
     promoted: false,
   },
-
-  // Add more jobs here...
 ];
 
 export { jobCards, recommendedJobs };

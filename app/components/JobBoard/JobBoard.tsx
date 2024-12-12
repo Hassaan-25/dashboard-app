@@ -79,6 +79,7 @@ export default function JobBoard() {
                 applicants={job.applicants}
                 logo={job.logo}
                 promoted={job.promoted}
+                site={job.site}
               />
             </Grid>
           ))}
@@ -126,6 +127,7 @@ export default function JobBoard() {
                 applicants={job.applicants}
                 logo={job.logo}
                 promoted={job.promoted}
+                site={job.site}
               />
             </Grid>
           ))}

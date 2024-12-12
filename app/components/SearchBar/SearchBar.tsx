@@ -114,6 +114,7 @@ export default function JobSearchFilter({
         <MenuItem value="">Select Location</MenuItem>
         <MenuItem value="Remote">Remote</MenuItem>
         <MenuItem value="USA">USA</MenuItem>
+        <MenuItem value="Pakistan">Pakistan</MenuItem>
       </Select>
       <Select
         fullWidth={isMobile}

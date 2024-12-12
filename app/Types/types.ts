@@ -15,4 +15,5 @@ export interface JobCardProps {
   applicants: number;
   logo: StaticImageData;
   promoted?: boolean;
+  site?: string;
 }

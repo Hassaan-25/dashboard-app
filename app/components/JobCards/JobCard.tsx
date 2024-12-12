@@ -21,6 +21,7 @@ export default function JobCard({
   applicants,
   promoted,
   logo,
+  site,
 }: JobCardProps) {
   return (
     <Card
@@ -85,7 +86,7 @@ export default function JobCard({
             height={12}
           />
           <Typography variant="body2" color="#585D6E">
-            {location}
+            {site}
           </Typography>
         </Box>
         <Box display="flex" alignItems="center" gap="0.5rem">
