@@ -71,9 +71,6 @@ Contributions are welcome! If you'd like to improve the project, follow these st
    ```
 5. Open a pull request.
 
-## 📝 License
-
-This project is licensed under the MIT License.
 
 ---
 
