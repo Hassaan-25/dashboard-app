@@ -63,14 +63,6 @@ src/
 3. **Explore Featured Jobs**: Scroll through the featured jobs section.
 4. **Check Recommended Jobs**: View job recommendations tailored to you.
 
-## 🖼️ Screenshots
-
-### Desktop View:
-![Desktop View](https://via.placeholder.com/800x400)
-
-### Mobile View:
-![Mobile View](https://via.placeholder.com/400x800)
-
 ## 🌐 Deployment
 
 The project is deployed on **Netlify**. For CI/CD, every commit to the `main` branch triggers an automatic deployment.
