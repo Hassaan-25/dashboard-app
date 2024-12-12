@@ -202,63 +202,13 @@ export default function JobSearchFilter({
             {renderSearchInputs()}
           </Box>
         </Drawer>
-
-        {/* Similar Filters */}
-        <Box
-          display="flex"
-          flexWrap="wrap"
-          gap="0.5rem"
-          marginTop="1rem"
-          alignItems="center"
-        >
-          <Typography color="#737A91">Similar:</Typography>
-          <FilterButton
-            size="small"
-            onClick={() => handleFilterChange("category", "Frontend")}
-          >
-            Frontend
-          </FilterButton>
-          <FilterButton
-            size="small"
-            onClick={() => handleFilterChange("category", "Backend")}
-          >
-            Backend
-          </FilterButton>
-          <FilterButton
-            size="small"
-            onClick={() => handleFilterChange("category", "Graphic Designer")}
-          >
-            Graphic Designer
-          </FilterButton>
-        </Box>
       </Box>
     );
   }
 
-  // Desktop view
   return (
     <Box>
       <SearchContainer>{renderSearchInputs()}</SearchContainer>
-
-      {/* Similar Filters */}
-      <Box display="flex" gap="1rem" marginTop="1rem">
-        <Typography alignSelf={"center"} color="#737A91">
-          Similar:
-        </Typography>
-        <FilterButton
-          onClick={() => handleFilterChange("category", "Frontend")}
-        >
-          Frontend
-        </FilterButton>
-        <FilterButton onClick={() => handleFilterChange("category", "Backend")}>
-          Backend
-        </FilterButton>
-        <FilterButton
-          onClick={() => handleFilterChange("category", "Graphic Designer")}
-        >
-          Graphic Designer
-        </FilterButton>
-      </Box>
     </Box>
   );
 }

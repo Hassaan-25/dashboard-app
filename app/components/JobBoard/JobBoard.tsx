@@ -1,9 +1,9 @@
 "use client";
-
 import React, { useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import JobSearchFilter from "../SearchBar/SearchBar";
 import JobCard from "../JobCards/JobCard";
+import SimilarFeatures from "../SimilarFeatures/SimilarFeatures";
 import { Filters } from "@/app/Types/types";
 import { jobCards, recommendedJobs } from "./StaticData";
 
@@ -35,9 +35,19 @@ export default function JobBoard() {
     setFilteredJobs(filtered);
   };
 
+  const handleFilterChange = (filters: Record<string, string | null>) => {
+    const newFilters: Filters = {
+      keyword: "",
+      location: "",
+      jobType: filters.jobType || undefined,
+      category: filters.category || undefined,
+    };
+    handleSearch(newFilters);
+  };
   return (
     <div>
       <JobSearchFilter onSearch={handleSearch} />
+      <SimilarFeatures onFilterChange={handleFilterChange} />
 
       <Box display="flex" alignItems="center" mt={3} mb={2}>
         <Typography
