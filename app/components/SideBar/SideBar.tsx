@@ -40,9 +40,11 @@ export default function Sidebar() {
         <Box
           bgcolor={"#F4F4F4"}
           height={100}
-          borderRadius="8px"
           position="relative"
           overflow="hidden"
+          sx={{
+            borderRadius: "8px 8px 0px 0px",
+          }}
         >
           <Image
             src={background}
