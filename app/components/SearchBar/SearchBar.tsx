@@ -7,7 +7,6 @@ import {
   InputBase,
   MenuItem,
   Select,
-  Typography,
   useMediaQuery,
   useTheme,
   Drawer,
@@ -32,17 +31,6 @@ const SearchContainer = styled(Box)(({ theme }) => ({
     gap: "0.5rem",
   },
 }));
-
-const FilterButton = styled(Button)({
-  border: "1px solid #ccc",
-  borderRadius: "8px",
-  padding: "0.5rem 1rem",
-  color: "#737A91",
-  textTransform: "capitalize",
-  "&:hover": {
-    backgroundColor: "#E5E5E5",
-  },
-});
 
 export default function JobSearchFilter({
   onSearch,

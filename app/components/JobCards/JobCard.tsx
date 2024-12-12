@@ -16,7 +16,6 @@ import Grid from "@mui/material/Grid";
 export default function JobCard({
   title,
   company,
-  location,
   posted,
   applicants,
   promoted,
